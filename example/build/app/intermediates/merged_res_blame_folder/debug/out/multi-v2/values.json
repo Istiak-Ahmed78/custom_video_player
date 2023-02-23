@@ -1,27 +1,8 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\Android_studio_projects\\video_player\\example\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "D:\\Flutter_Projects\\video_player\\example\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
-                {
-                    "source": "E:\\Android_studio_projects\\video_player\\example\\android\\app\\src\\main\\res\\values\\styles.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "57",
-                        "endLines": "4",
-                        "endColumns": "12",
-                        "endOffsets": "226"
-                    },
-                    "to": {
-                        "startLines": "103",
-                        "startColumns": "4",
-                        "startOffsets": "6151",
-                        "endLines": "105",
-                        "endColumns": "12",
-                        "endOffsets": "6318"
-                    }
-                },
                 {
                     "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-3\\37c151b7a7467bdb7c88bbae8ebdd209\\transformed\\jetified-exoplayer-core-2.18.1\\res\\values\\values.xml",
                     "from": {
@@ -56,6 +37,25 @@
                         "endLines": "7,8,9,10,72,126,130,282,299,307",
                         "endColumns": "11,59,51,44,59,24,24,24,24,24",
                         "endOffsets": "289,349,401,446,4387,7633,7830,16952,18066,18459"
+                    }
+                },
+                {
+                    "source": "D:\\Flutter_Projects\\video_player\\example\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "57",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "226"
+                    },
+                    "to": {
+                        "startLines": "103",
+                        "startColumns": "4",
+                        "startOffsets": "6151",
+                        "endLines": "105",
+                        "endColumns": "12",
+                        "endOffsets": "6318"
                     }
                 },
                 {

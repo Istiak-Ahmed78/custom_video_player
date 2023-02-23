@@ -482,6 +482,7 @@ class VideoPlayerController extends ValueNotifier<VideoPlayerValue> {
     if (_isDisposedOrNotInitialized) {
       return;
     }
+    // If in video playing
     if (value.isPlaying) {
       await _videoPlayerPlatform.play(_textureId);
 

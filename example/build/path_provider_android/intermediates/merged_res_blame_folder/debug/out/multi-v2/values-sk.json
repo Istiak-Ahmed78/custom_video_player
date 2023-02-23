@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\Android_studio_projects\\video_player\\example\\build\\path_provider_android\\intermediates\\merged_res\\debug\\values-sk\\values-sk.xml",
+            "outputFile": "D:\\Flutter_Projects\\video_player\\example\\build\\path_provider_android\\intermediates\\merged_res\\debug\\values-sk\\values-sk.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-3\\cdc8381483b8f93e69df15ad3eb1e86a\\transformed\\core-1.6.0\\res\\values-sk\\values-sk.xml",
@@ -16,7 +16,7 @@
             ]
         },
         {
-            "outputFile": "E:\\Android_studio_projects\\video_player\\example\\build\\path_provider_android\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sk\\values-sk.xml",
+            "outputFile": "D:\\Flutter_Projects\\video_player\\example\\build\\path_provider_android\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sk\\values-sk.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-3\\cdc8381483b8f93e69df15ad3eb1e86a\\transformed\\core-1.6.0\\res\\values-sk\\values-sk.xml",

@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
 export "FLUTTER_ROOT=F:\flutter_sdk\flutter"
-export "FLUTTER_APPLICATION_PATH=E:\Android_studio_projects\flutter_plugins\packages\video_player\video_player\example"
+export "FLUTTER_APPLICATION_PATH=D:\Flutter_Projects\video_player\example"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_TARGET=lib\main.dart"
 export "FLUTTER_BUILD_DIR=build"

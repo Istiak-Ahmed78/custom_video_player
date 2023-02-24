@@ -1,3 +1,5 @@
+# This packages is under modification and maintaining by Istiak Ahmed. forked code from flutters video player
+
 <?code-excerpt path-base="excerpts/packages/video_player_example"?>
 
 # Video Player plugin for Flutter

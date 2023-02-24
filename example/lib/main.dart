@@ -296,27 +296,25 @@ class _ControlsOverlay extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        AnimatedSwitcher(
-          duration: const Duration(milliseconds: 50),
-          reverseDuration: const Duration(milliseconds: 200),
-          child: controller.value.isPlaying
-              ? const SizedBox.shrink()
-              : Container(
-                  color: Colors.black26,
-                  child: const Center(
-                    child: Icon(
-                      Icons.play_arrow,
-                      color: Colors.white,
-                      size: 100.0,
-                      semanticLabel: 'Play',
-                    ),
-                  ),
-                ),
-        ),
-        GestureDetector(
-          onTap: () {
-            controller.value.isPlaying ? controller.pause() : controller.play();
-          },
+        // AnimatedSwitcher(
+        //   duration: const Duration(milliseconds: 50),
+        //   reverseDuration: const Duration(milliseconds: 200),
+        //   child: controller.value.isPlaying
+        //       ? const SizedBox.shrink()
+        //       : Container(
+        //           color: Colors.black26,
+        //           child: const Center(
+        //             child: Icon(
+        //               Icons.play_arrow,
+        //               color: Colors.white,
+        //               size: 100.0,
+        //               semanticLabel: 'Play',
+        //             ),
+        //           ),
+        //         ),
+        // ),
+        _TabOverlay(
+          controller: controller,
         ),
         Align(
           alignment: Alignment.topLeft,
@@ -376,6 +374,71 @@ class _ControlsOverlay extends StatelessWidget {
             ),
           ),
         ),
+      ],
+    );
+  }
+}
+
+class _TabOverlay extends StatefulWidget {
+  const _TabOverlay({Key? key, required this.controller}) : super(key: key);
+  final VideoPlayerController controller;
+  @override
+  State<_TabOverlay> createState() => __TabOverlayState();
+}
+
+class __TabOverlayState extends State<_TabOverlay> {
+  // Set duration for seeking
+  final Duration _defaultSeekDuration = Duration(seconds: 2);
+
+  // If the video has less than [_defaultSeekDuration] time left to finish or
+  // current position duration is less than [_defaultSeekDuration]
+  //In these two cases the running video is unseekable.
+  bool _isSeekAble(Duration videoCurrentPosition, Duration videoDuration) {
+    return !videoCurrentPosition.compareTo(_defaultSeekDuration).isNegative ||
+        (videoDuration.inSeconds - videoCurrentPosition.inSeconds) > 2;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(child: GestureDetector(
+          /// On double taping on the left side of the video.
+          /// The video seeks back [_defaultSeekDuration] if seekable.
+          onDoubleTap: () async {
+            Duration? _currentDuration = await widget.controller.position;
+            Duration? _videoDuration = widget.controller.value.duration;
+            if (_currentDuration == null ||
+                !_isSeekAble(_currentDuration, _videoDuration)) return;
+            _currentDuration -= _defaultSeekDuration;
+            widget.controller.pause();
+            await widget.controller.seekTo(_currentDuration);
+            widget.controller.play();
+          },
+        )),
+        Expanded(child: GestureDetector(
+          onTap: () {
+            print('Applied');
+            widget.controller.value.isPlaying
+                ? widget.controller.pause()
+                : widget.controller.play();
+          },
+        )),
+        Expanded(child: GestureDetector(
+          /// On double taping on the right side of the video.
+          /// The video seeks forward [_defaultSeekDuration] if seekable.
+          onDoubleTap: () async {
+            Duration? _currentDuration = await widget.controller.position;
+            Duration? _videoDuration = widget.controller.value.duration;
+
+            if (_currentDuration == null ||
+                !_isSeekAble(_currentDuration, _videoDuration)) return;
+            _currentDuration += _defaultSeekDuration;
+            widget.controller.pause();
+            await widget.controller.seekTo(_currentDuration);
+            widget.controller.play();
+          },
+        )),
       ],
     );
   }

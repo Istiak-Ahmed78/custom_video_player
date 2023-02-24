@@ -1,4 +1,4 @@
-# This packages is under modification and maintaining by Istiak Ahmed. forked from flutters video player
+# This packages is under modification and being maintained by Istiak Ahmed.Code forked from flutters video player
 
 <?code-excerpt path-base="excerpts/packages/video_player_example"?>
 
